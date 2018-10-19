@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 //import {robots} from "./robots.js";
-import ParentComp from './parentComp.js'
+import ErrorBoundary from './errorBoundary';
 import AllRobots from "./robotLoop.js";
 import SearchComponent from "./searchComponent";
 class App extends Component {
@@ -39,9 +39,9 @@ class App extends Component {
       <div className = "tc bg-light-blue">
         <h1>Robot Friends</h1>
         <SearchComponent searchChange={this.onSearchChange} />
-        <ParentComp>
+        <ErrorBoundary>
           <AllRobots robotarray = {this.state.robot} />
-        </ParentComp>
+        </ErrorBoundary>
       </div>
       );
   }
